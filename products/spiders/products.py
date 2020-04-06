@@ -23,7 +23,9 @@ class BooksSpider(scrapy.Spider):
         cat = response.css("div.path-title")
 
         item["title"] = product.css("h1 ::text").extract_first()
+        item['parent'] = cat.css("a:first-of-type ::text").extract_first()
         item['category'] = cat.css("a:last-of-type ::text").extract_first()
+        item['image'] = product.css(".large-pic > div ::attr(style)").re_first('background-image: (.*)$')
         item['description'] = product.css("div.has-inform > p ::text").extract_first()
         item['price'] = product.css("h2 ::text").extract_first()
         yield item
