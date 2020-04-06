@@ -6,22 +6,6 @@ class BooksSpider(scrapy.Spider):
     name = "products"
     allowed_domains = ["sirena.do"]
     start_urls = [
-        'http://sirena.do/products/category/abarrotes/',
-        'https://sirena.do/products/category/bebe',
-        'https://sirena.do/products/category/bebidas',
-        'https://sirena.do/products/category/bebidas-alcoholicas',
-        'https://sirena.do/products/category/caldos-y-condimentos',
-        'https://sirena.do/products/category/carnes',
-        'https://sirena.do/products/category/cuidado-personal',
-        'https://sirena.do/products/category/cuidado-de-la-ropa',
-        'https://sirena.do/products/category/deli',
-        'https://sirena.do/products/category/desechables',
-        'https://sirena.do/products/category/frutas-y-vegetales',
-        'https://sirena.do/products/category/graneria',
-        'https://sirena.do/products/category/lacteos-y-huevos',
-        'https://sirena.do/products/category/limpieza-del-hogar',
-        'https://sirena.do/products/category/panaderia-y-reposteria',
-        'https://sirena.do/products/category/pescados-y-mariscos-',
         'https://sirena.do/products/category/picaderas-dulces',
         'https://sirena.do/products/category/picaderas-saladas',
         'https://sirena.do/products/category/miscelaneos',
