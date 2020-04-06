@@ -18,11 +18,12 @@ class BooksSpider(scrapy.Spider):
 
     def parse_product_page(self, response):
         item = {}
+        
         product = response.css("div.item-info")
+        cat = response.css("div.path-title")
+
         item["title"] = product.css("h1 ::text").extract_first()
-        item['category'] = response.xpath(
-            "//div[@class='path-title']/a:last-of-type/preceding-sibling::/a/text()"
-        ).extract_first()
+        item['category'] = cat.css("a:last-of-type ::text").extract_first()
         item['description'] = product.css("div.has-inform > p ::text").extract_first()
         item['price'] = product.css("h2 ::text").extract_first()
         yield item
